@@ -1,0 +1,11 @@
+/.cache
+/.xmake
+/build
+/.vscode
+build_log.txt
+compile_commands.json
+/Drivers
+/MDK-ARM/Weather_station.uvguix.*
+/MDK-ARM/DebugConfig
+/MDK-ARM/RTE
+Makefile
