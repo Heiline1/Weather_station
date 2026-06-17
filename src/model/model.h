@@ -19,13 +19,13 @@
 #include "driver/temt6000.h"
 #include "driver/lora.h"
 #include "driver/bme280.h"
-
+#include "driver/rain_light_sensor.h"
 
 extern ssd1306_t g_oled;
 extern temt6000_t g_temt6000;
 extern lora_t g_lora;
 extern bme280_t g_bme280;
-
+extern rls_t g_rls;
 
 /**
  * @brief 初始化所有板载外设

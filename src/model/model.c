@@ -31,6 +31,10 @@ lora_t g_lora = {
 
 };
 
+uint8_t sensor_rx_buf[32]; // 接收缓冲区
+rls_t g_rls = {
+    .huart = &huart1;
+};
 
 void model_init(void)
 {
@@ -53,4 +57,5 @@ void model_init(void)
     /* 清除 GDDRAM 随机值，防止显示屏上电花屏 */
     ssd1306_clear(&g_oled);
 
+    rls_init(&my_sensor, &huart1, RLS_DEFAULT_ADDR, sensor_rx_buf, sizeof(sensor_rx_buf));
 }

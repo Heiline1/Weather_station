@@ -23,6 +23,16 @@ void app_run(void)
     
     while (1) {
         log_info("app running");
-        HAL_Delay(1000);
+        if (rls_read_all(&my_sensor)) {
+            // 读取成功，使用数据
+            float rain = my_sensor.data.rainfall_mm;
+            uint32_t lux = my_sensor.data.illuminance_lux;
+            
+            printf("Rain: %.1f mm, Lux: %lu\r\n", rain, lux);
+        } else {
+            printf("Sensor read failed!\r\n");
+        }
+        
+        HAL_Delay(2000); // 每2秒读取一次
     }
 }
